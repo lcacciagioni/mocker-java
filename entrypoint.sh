@@ -17,6 +17,11 @@ git clone $BP_URL /buildpack && cd /buildpack && git checkout $BP_VERSION && git
 # Here we detect if the file is zipped
 if [ "$(file /object | grep -b -i zip | wc -l)" -eq 1 ];then
 	unzip -o -K /object -d $HOME
+elif [ "$(file /object | grep -b -i directory | wc -l)" -eq 1 ];then
+	cp -rp /object/* $HOME
+else
+	echo "You must bind a Directory, or any java conatiner (JAR/WAR/ZIP) to the /object path"
+	exit 1
 fi
 cd $HOME
 /buildpack/bin/compile $HOME $TMPDIR && /buildpack/bin/release $HOME > /opt/release.yml
