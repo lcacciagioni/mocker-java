@@ -12,7 +12,8 @@ This image has a few env vars that you can modify to alter the behavior at runti
 * **RUN_COMMAND**: This is the command to run your app. For most java apps this defaults to what `bin/expose` script creates([Details](http://docs.cloudfoundry.org/buildpacks/custom.html)).
 * **BP_URL**: This is the java buildpack git url. This is mainly intended for custom java buildpacks. `default: https://github.com/cloudfoundry/java-buildpack.git`
 * **BP_VERSION**: This is the version of the buildpack to checkout. `default: v2.7.1`
-Two important thing to know is that ***you must mount your code/object in the /object path of the image*** and ***Default listening port is 8080 (Remember to expose it)***, you can check the next examples to see how to do this.-
+
+> Two important thing to know is that ***you must mount your code/object in the /object path of the image*** and ***Default listening port is 8080 (Remember to expose it)***, you can check the next examples to see how to do this.-
 
 ## Usage
 For this examples we use the [spring-music](https://github.com/cloudfoundry-samples/spring-music#running-the-application-on-cloud-foundry) sample app. And for the check you can use your browser to see the [http://localhost:8080](http://localhost:8080) url.-
