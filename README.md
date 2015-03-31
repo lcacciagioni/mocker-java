@@ -8,7 +8,7 @@ This docker image will try to emulate Cloud Foundry runtime for the [Java Buildp
 > **WARNING: [cf-release v204](https://groups.google.com/a/cloudfoundry.org/forum/#!topic/vcap-dev/gU7rpD8MSC4)** was the first release to support cflinuxfs2 stack. Buildpacks prior to this cf-release version could not work.
 
 ## Configuration
-This image has a few env vars that you can modify to alter the behavior at runtime. You can check it [here](https://github.com/lcacciagioni/mocker-java/blob/master/Dockerfile#L6) and [here](https://github.com/lcacciagioni/mocker-java/blob/master/entrypoint.sh#L3-L13). But the 3 more important are:
+This image has a few env vars that you can modify to alter the behavior at runtime. You can check it [here](https://github.com/lcacciagioni/mocker-java/blob/master/Dockerfile#L6)([Details](http://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html)) and [here](https://github.com/lcacciagioni/mocker-java/blob/master/entrypoint.sh#L3-L13). But the 3 more important are:
 * **RUN_COMMAND**: This is the command to run your app. For most java apps this defaults to what `bin/expose` script creates([Details](http://docs.cloudfoundry.org/buildpacks/custom.html)).
 * **BP_URL**: This is the java buildpack git url. This is mainly intended for custom java buildpacks. `default: https://github.com/cloudfoundry/java-buildpack.git`
 * **BP_VERSION**: This is the version of the buildpack to checkout. `default: v2.7.1`
