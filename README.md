@@ -18,6 +18,9 @@ This image has a few env vars that you can modify to alter the behavior at runti
 ## Usage
 For this examples we use the [spring-music](https://github.com/cloudfoundry-samples/spring-music#running-the-application-on-cloud-foundry) sample app. And for the check you can use your browser to see the [http://localhost:8080](http://localhost:8080) url.-
 ```bash
+$ git clone https://github.com/cloudfoundry-samples/spring-music.git $HOME/workspace/spring-music
+$ cd $HOME/workspace/spring-music
+$ ./gradle assemble
 $ docker run -p 8080:8080 -v $HOME/workspace/spring-music/build/libs/spring-music.war:/object cacciald/mocker-java:latest
 ```
 
